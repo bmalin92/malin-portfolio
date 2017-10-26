@@ -11,45 +11,6 @@
 </head>
 
 <body>
-    <header class="flex-halves" id="header">
-        <div class="col bio">
-            <div class="about" id="about">
-                <h4>Hi,</h4>
-                <p>I'm Ben Malin, and this is my portfolio!</p>
-
-                <p>My love for the web had been with me since I was a child, when I learned how to do basic HTML on forums I
-                    frequented. As I grew up, so did technology, and the evolution of tech kept this passion thriving. While
-                    it took me a long time to finally realize it, web and mobile technology is my greatest passion, and working
-                    as a developer is what I was always meant to do.</p>
-
-                <p>Since I started my studies in development, I've learned how to be successful as a full-stack developer, using
-                    libraries and frameworks such as React, Redux, React Native, NodeJS, Express, MongoDB, and jQuery. While
-                    I lean more toward the front-end of development, I still have the full-stack experience to supplement
-                    my work.</p>
-            </div>
-        </div>
-        <div class="col contact">
-            <h1>Ben Malin</h1>
-            <img class="headshot" src="./images/headshot.jpg" alt="Ben Malin headshot">
-            <nav class="contact-links">
-                <ul>
-                    <li class="contact-link contact-link-github">
-                        <a href="https://www.github.com">
-                            <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
-                    </li>
-                    <li class="contact-link contact-link-linkedin">
-                        <a href="https://www.linkedin.com">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-                    </li>
-                    <li class="contact-link contact-link-email">
-                        <a href="mailto:jrandomhacker@example.com">
-                            <i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
     <nav class="nav-bar" id="nav-bar">
         <h1 class="name-nav">Ben Malin</h1>
         <ul class="contact-nav">
@@ -67,6 +28,50 @@
             </li>
         </ul>
     </nav>
+
+    <header class="flex-halves" id="header">
+
+        <div class="col contact">
+            <h1>Ben Malin</h1>
+            <div class="headshot-container">
+                <img class="headshot" src="./images/headshot.jpg" alt="Ben Malin headshot">
+            </div>
+            <nav class="contact-links">
+                <ul>
+                    <li class="contact-link contact-link-github">
+                        <a href="https://www.github.com">
+                            <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+                    </li>
+                    <li class="contact-link contact-link-linkedin">
+                        <a href="https://www.linkedin.com">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>  LinkedIn</a>
+                    </li>
+                    <li class="contact-link contact-link-email">
+                        <a href="mailto:jrandomhacker@example.com">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>  Email</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="col bio">
+            <div class="about" id="about">
+                <h4>Hi,</h4>
+                <p>I'm Ben Malin, and this is my portfolio!</p>
+
+                <p>My love for the web had been with me since I was a child, when I learned how to do basic HTML on forums I
+                    frequented. As I grew up, so did technology, and the evolution of tech kept this passion thriving. While
+                    it took me a long time to finally realize it, web and mobile technology is my greatest passion, and working
+                    as a developer is what I was always meant to do.</p>
+
+                <p>Since I started my studies in development, I've learned how to be successful as a full-stack developer, using
+                    libraries and frameworks such as React, Redux, React Native, NodeJS, Express, MongoDB, and jQuery. While
+                    I lean more toward the front-end of development, I still have the full-stack experience to supplement
+                    my work.</p>
+            </div>
+        </div>
+
+    </header>
 
     <section id="past-projects">
         <h2 class="past-projects-header">Past Projects</h2>
@@ -278,7 +283,7 @@
         (function ($) {
             $(document).ready(function () {
                 $(window).scroll(function () {
-                    if ($(this).scrollTop() > 400) {
+                    if ($(this).scrollTop() > 300) {
                         $('#nav-bar').fadeIn(300);
                         $('#nav-bar').css('display', 'flex');
                     } else {
