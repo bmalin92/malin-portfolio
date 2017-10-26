@@ -1,0 +1,236 @@
+body {
+	max-width: 1068px;
+	min-height: 200vh;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+	color: #444;
+	font-size: 1em;
+	line-height: 1.2;
+}
+
+h1 {
+	color: #222;
+	font-size: 1.5em;
+}
+
+h2, h3, h4 {
+	color: #444;
+}
+
+a {
+	text-decoration: none;
+	color: #444;
+}
+
+@media (max-width: 768) {
+[class*="col-"] {
+	width: 100%;
+	display: flex;
+}
+}
+
+
+
+@media (min-width: 769px) {
+
+/* TOP SECTION */
+header.flex-halves {
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	padding: 5vh 0 10vh 0;
+}
+
+.bio {
+	flex: 3;
+	order: 2;
+	margin: 10vh 5vw 5vh 5vw;
+}
+
+.bio h4 {
+	margin-top: 5px;
+}
+
+.contact {
+	flex: 2;
+	width: 100%;
+	margin: 10vh 5vw 5vh 5vw;
+	text-align: center;
+}
+
+.contact h1 {
+	margin-top: 0;
+}
+
+.contact img {
+	width: 250px;
+}
+
+.contact ul {
+	list-style-type: none;
+  list-style-position:inside;
+  margin:0;
+	padding: 1vh 0;
+	font-size: 1.1em;
+}
+
+.work-nav {
+	display: block;
+	width: 75px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.work-nav p {
+	text-align: center;
+	font-size: 1.2em;
+	color: #333;
+	margin: 25px 0 0 0;
+}
+
+
+/* NAV BAR */
+
+#nav-bar {
+	position: fixed;
+	max-width: 1068px;
+	width: 100%;
+	top: 0px; 
+	height: 45px; 
+	background: linear-gradient(rgb(255, 255, 255), white, white, white, rgba(255, 255, 255, 0));
+	color: #333;
+	z-index: 9999;
+	display: none;
+	justify-content: space-around;
+	align-items: baseline;
+	margin: auto;
+}
+
+#nav-bar a {
+	color: #333;
+	font-size: 1.5em;
+}
+
+.nav-bar ul {
+	list-style-type: none;
+  list-style-position:inside;
+  padding:0;
+}
+
+.nav-bar li {
+	display: inline;
+	padding: 0 2vw 0 2vw;
+}
+
+.contact-nav {
+	margin: 5px 0 0 0;
+	text-align: center;
+	flex: 1;
+}
+
+.name-nav {
+	margin: 5px 0 0 0;
+	text-align: center;
+	flex: 1;
+}
+
+
+/* PROJECTS */
+
+#past-projects {
+	border-top: 1px solid #666;
+	padding: 5vh 0;
+}
+
+.past-projects-header {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+section.flex-halves {
+	display: flex;
+	max-width: 1068px;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.project {
+	margin: 1vh 2vw 2vh 2vw;
+	width: 40%;
+}
+
+.project h3 {
+	text-align: center;
+}
+
+.project-image {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.technologies-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 5px 20px;
+}
+
+.technology-icon {
+	width: 75px;
+}
+
+.technology-icon img {
+	display: block;
+	margin: 0 auto;
+	height: 40px;
+}
+
+.technology-icon p {
+	margin: 0;
+	text-align: center;
+}
+
+.project-links ul {
+	list-style-type: none;
+  list-style-position:inside;
+	padding:0;
+	text-align: center;
+}
+
+.project-links li {
+	display: inline;
+	padding: 0 2vw 0 2vw;
+}
+
+.cocktail-menu-text {
+	color: #607073;
+}
+
+
+/* WORK EXPERIENCE */
+
+#experience {
+	width: 90%;
+	margin: auto;
+	padding-top: 5vh;
+	border-top: 1px solid #666;
+}
+
+.experience h2 {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.job h3 {
+	text-align: center;
+}
+
+.tasks {
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+}
+}
