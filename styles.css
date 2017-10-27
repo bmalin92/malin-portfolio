@@ -218,7 +218,7 @@ section.flex-halves {
 /* WORK EXPERIENCE */
 
 #experience {
-	width: 90%;
+	width: 100%;
 	margin: auto;
 	padding-top: 3vh;
 	border-top: 1px solid #666;
@@ -231,6 +231,14 @@ section.flex-halves {
 
 .job h3 {
 	text-align: center;
+}
+
+.tasks {
+	padding: 0 4vw 1vh 4vw;
+}
+
+.job ul {
+	padding-left: 20px;
 }
 
 }
@@ -409,9 +417,7 @@ section.flex-halves {
 /* WORK EXPERIENCE */
 
 #experience {
-	width: 90%;
-	margin: auto;
-	padding-top: 5vh;
+	padding: 5vh 4vw;
 	border-top: 1px solid #666;
 }
 
@@ -426,7 +432,13 @@ section.flex-halves {
 
 .tasks {
 	display: flex;
+	width: 60%;
+	min-width: 500px;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	margin: auto;
 }
+
+
+
 }
