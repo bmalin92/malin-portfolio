@@ -93,7 +93,7 @@ header.flex-halves {
 	width: 100%;
 	top: 0px; 
 	height: 40px; 
-	background: white;
+	background: rgba(255, 255, 255, 0.90);
 	color: #333;
 	z-index: 9999;
 	display: none;
