@@ -1,26 +1,43 @@
 body {
-	max-width: 1068px;
+	max-width: 640px;
 	min-height: 200vh;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 50px;
 	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-	color: #444;
+	color: #222;
 	font-size: 1em;
 	line-height: 1.2;
+	padding-bottom: 10px;
+	text-align: justify;
+}
+
+.bottom-line {
+	position: fixed;
+	height: 5px;
+	max-width: 100%;
+	width: 100%;
+	left: 0;
+	bottom: 0px; 
+	background: #222;
+	z-index: 9999;
+	justify-content: space-around;
+	align-items: center;
+	margin: auto;
 }
 
 h1 {
-	color: #222;
+	color: black;
 	font-size: 1.5em;
 }
 
-h2, h3, h4 {
-	color: #444;
+h2, h3 {
+	color: #111;
 }
 
 a {
 	text-decoration: none;
-	color: #444;
+	color: #333;
 }
 
 @media (max-width: 767) {
@@ -94,17 +111,17 @@ header.flex-halves {
 	top: 0px; 
 	height: 40px; 
 	background: rgba(255, 255, 255, 0.90);
-	color: #333;
+	color: #222;
 	z-index: 9999;
 	display: none;
 	justify-content: space-around;
 	align-items: center;
 	margin: auto;
-	border-bottom: 1px solid #333;
+	border-bottom: 1px solid #222;
 }
 
 #nav-bar a {
-	color: #333;
+	color: #222;
 	font-size: 1.1em;
 }
 
@@ -248,45 +265,88 @@ section.flex-halves {
 @media (min-width: 768px) {
 
 /* TOP SECTION */
-header.flex-halves {
-	display: flex;
-	justify-content: space-around;
-	margin: auto;
-	padding: 5vh 0 10vh 0;
-}
-
-.bio {
-	flex: 3;
-	margin: 10vh 5vw 5vh 5vw;
-}
-
-.bio h4 {
-	margin-top: 5px;
-}
-
-.contact {
-	flex: 2;
-	width: 100%;
-	margin: 10vh 5vw 5vh 5vw;
-	text-align: center;
-}
-
 .contact h1 {
-	margin-top: 0;
-}
-
-.contact img {
-	width: 250px;
+	text-align: center;
+	margin: 0;
+	margin-top: 100px;
+	font-size: 36px;
 }
 
 .contact ul {
 	list-style-type: none;
   list-style-position:inside;
-  margin:0;
-	padding: 1vh 0;
-	font-size: 1.1em;
+	margin:0;
+	margin-top: 25px;
+	padding: 0;
+	font-size: 24px;
+	text-align: center;
 }
 
+.contact ul li {
+	display: inline;
+	margin: 25px;
+	color: #222
+}
+
+.contact ul li i {
+	color: black;
+}
+
+.bio {
+	margin-top: 150px;
+}
+
+.about {
+	display: none;
+}
+
+.bio h2 {
+	text-align: center;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	margin-top: 50px;
+}
+	
+ .bio .bounce {
+	bottom: 30px;
+	left: 50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	border-radius:50%;
+	animation: bounce 4s infinite;
+	-webkit-animation: bounce 4s infinite;
+	-moz-animation: bounce 4s infinite;
+	-o-animation: bounce 4s infinite;
+	cursor: pointer;
+ }
+
+ .bio .bounce:hover {
+	text-shadow: 0 0 1px #666;
+ }
+	
+ @-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+	40% {-webkit-transform: translateY(-10px);}
+	60% {-webkit-transform: translateY(-10px);}
+ }
+	
+ @-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-10px);}
+	60% {-moz-transform: translateY(-10px);}
+ }
+	
+ @-o-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-10px);}
+	60% {-o-transform: translateY(-10px);}
+ }
+ @keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-10px);}
+	60% {transform: translateY(-10px);}
+ }
 
 /* NAV BAR */
 
@@ -298,21 +358,25 @@ header.flex-halves {
 	top: 0px; 
 	height: 40px;
 	background: rgba(255, 255, 255, 0.90);
-	color: #333;
+	color: #222;
 	z-index: 9999;
 	display: none;
 	justify-content: space-around;
 	align-items: center;
 	margin: auto;
-	border-bottom: 1px solid #333;
+	border-bottom: 1px solid #222;
 }
 
 .nav-bar h1 {
 	margin: 0;
 }
 
+#nav-bar i {
+	color: black;
+}
+
 #nav-bar a {
-	color: #333;
+	color: #222;
 	font-size: 1.5em;
 }
 
@@ -343,102 +407,126 @@ header.flex-halves {
 
 /* PROJECTS */
 
-#past-projects {
+.past-projects {
 	border-top: 1px solid #666;
-	padding: 5vh 0;
+	margin: 0;
+	padding: 0;
+	margin-top: 50px;
 }
 
-.past-projects-header {
+.past-projects h2 {
 	text-align: center;
-	margin-bottom: 0;
+	margin-top: 50px;
+	margin-bottom: 40px;
 }
 
-section.flex-halves {
+.demo-and-tech-container {
 	display: flex;
-	max-width: 1068px;
-	flex-wrap: wrap;
-	justify-content: space-around;
 }
 
-.project {
-	margin: 1vh 2vw 2vh 2vw;
-	width: 40%;
-}
-
-.project h3 {
+.demo-images {
 	text-align: center;
 }
 
 .project-image {
 	width: 100%;
-	margin: 0 auto;
-	text-align: center;
 }
 
 .technologies-container {
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	margin: 5px 20px;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	margin: 10px;
+	max-height: 280px;
 }
 
 .technology-icon {
-	width: 75px;
+	flex: 1;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 .technology-icon img {
-	display: block;
-	margin: 0 auto;
-	height: 40px;
+	height: 30px;
 }
 
-.technology-icon p {
+.technology-icon .image-text {
 	margin: 0;
 	text-align: center;
+	margin-bottom: 10px;
 }
 
-.project-links ul {
-	list-style-type: none;
-  list-style-position:inside;
-	padding:0;
-	text-align: center;
-}
-
-.project-links li {
-	display: inline;
-	padding: 0 2vw 0 2vw;
-}
-
-.cocktail-menu-text {
-	color: #607073;
+.cocktails:hover {
+	text-shadow: 0 0 20px rgb(205, 237, 255);
 }
 
 
 /* WORK EXPERIENCE */
 
 #experience {
-	padding: 5vh 4vw;
+	margin-top: 25px;
 	border-top: 1px solid #666;
 }
 
 .experience h2 {
 	text-align: center;
-	margin-bottom: 0;
+	margin-top: 50px;
+	margin-bottom: 40px;
+	cursor: pointer;
 }
 
-.job h3 {
-	text-align: center;
+.jobs {
+	display: none;
 }
 
-.tasks {
-	display: flex;
-	width: 60%;
-	min-width: 500px;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin: auto;
+.jobs ul {
+	list-style-type: square;
 }
 
+.experience .bounce {
+	bottom: 30px;
+	left: 50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	border-radius:50%;
+	animation: bounce 4s infinite;
+	-webkit-animation: bounce 4s infinite;
+	-moz-animation: bounce 4s infinite;
+	-o-animation: bounce 4s infinite;
+	cursor: pointer;
+ }
 
+ .experience .bounce:hover {
+	text-shadow: 0 0 1px #666;
+ }
+	
+ @-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+	40% {-webkit-transform: translateY(-10px);}
+	60% {-webkit-transform: translateY(-10px);}
+ }
+	
+ @-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-10px);}
+	60% {-moz-transform: translateY(-10px);}
+ }
+	
+ @-o-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-10px);}
+	60% {-o-transform: translateY(-10px);}
+ }
+ @keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-10px);}
+	60% {transform: translateY(-10px);}
+ }
 
 }

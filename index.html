@@ -29,13 +29,12 @@
         </ul>
     </nav>
 
-    <header class="flex-halves" id="header">
+    <div class="bottom-line">
+    </div>
 
+    <header id="header">
         <div class="col contact">
             <h1>Ben Malin</h1>
-            <div class="headshot-container">
-                <img class="headshot" src="./images/headshot.jpg" alt="Ben Malin headshot">
-            </div>
             <nav class="contact-links">
                 <ul>
                     <li class="contact-link contact-link-github">
@@ -53,52 +52,58 @@
                 </ul>
             </nav>
         </div>
-
-        <div class="col bio">
-            <div class="about" id="about">
-                <h4>Hi,</h4>
-                <p>I'm Ben Malin, and this is my portfolio!</p>
-
-                <p>My love for the web had been with me since I was a child, when I learned how to do basic HTML on forums I
-                    frequented. As I grew up, so did technology, and the evolution of tech kept this passion thriving. While
-                    it took me a long time to finally realize it, web and mobile technology is my greatest passion, and working
-                    as a developer is what I was always meant to do.</p>
-
-                <p>Since I started my studies in development, I've learned how to be successful as a full-stack developer, using
-                    libraries and frameworks such as React, Redux, React Native, NodeJS, Express, MongoDB, and jQuery. While
-                    I lean more toward the front-end of development, I still have the full-stack experience to supplement
-                    my work.</p>
-            </div>
-        </div>
-
     </header>
 
-    <section id="past-projects">
-        <h2 class="past-projects-header">Past Projects</h2>
-        <section class="work flex-halves" id="work">
+    <section class="bio">
+        <div class="bounce">
+            <h2 class="bioButton">About Me</h2>
+        </div>
+        <div class="about" id="about">
+            <h4>Hi,</h4>
+            <p>I'm Ben Malin, and this is my portfolio!</p>
 
-            <section class="project">
+            <p>My love for the web had been with me since I was a child, when I learned how to do basic HTML on forums I frequented.
+                As I grew up, so did technology, and the evolution of tech kept this passion thriving. While it took me a
+                long time to finally realize it, web and mobile technology is my greatest passion, and working as a developer
+                is what I was always meant to do.</p>
+
+            <p>Since I started my studies in development, I've learned how to be successful as a full-stack developer, using
+                libraries and frameworks such as React, Redux, React Native, NodeJS, Express, MongoDB, and jQuery. While
+                I lean more toward the front-end of development, I still have the full-stack experience to supplement my
+                work.
+            </p>
+        </div>
+    </section>
+
+
+    <section class="past-projects">
+        <h2>Past Projects</h2>
+        <section class="work" id="work">
+
+            <section class="project cocktails">
                 <h3>Cocktail Menu Maker</h3>
-                <div class="demo-images">
-                    <img class="project-image" src="./images/cocktail-menu-demos.png" alt="Cocktail Menu laptop and phone screenshots">
-                </div>
-                <div class="technologies-container cocktail-menu-text">
-                    <div class="technology-icon">
-                        <img src="./images/react.svg" alt="React icon">
-                        <p class="image-text">React</p>
+                <div class="demo-and-tech-container">
+                    <div class="technologies-container cocktail-menu-text">
+                        <div class="technology-icon">
+                            <img src="./images/react.svg" alt="React icon">
+                            <p class="image-text">React</p>
+                        </div>
+                        <div class="technology-icon">
+                            <img src="./images/redux.svg" alt="Redux icon">
+                            <p class="image-text">Redux</p>
+                        </div>
+                        <div class="technology-icon">
+                            <img src="./images/nodejs-icon.svg" alt="NodeJS icon">
+                            <p class="image-text">NodeJS</p>
+                        </div>
+                        <div class="technology-icon">
+                            <img src="./images/mongodb.png" alt="MongoDB icon">
+                            <p class="image-text">MongoDB</p>
+                        </div>
                     </div>
-                    <div class="technology-icon">
-                        <img src="./images/redux.svg" alt="Redux icon">
-                        <p class="image-text">Redux</p>
-                    </div>
-                    <div class="technology-icon">
-                        <img src="./images/nodejs-icon.svg" alt="NodeJS icon">
-                        <p class="image-text">NodeJS</p>
-                    </div>
-                    <div class="technology-icon">
-                        <img src="./images/mongodb.png" alt="MongoDB icon">
-                        <p class="image-text">MongoDB</p>
-                    </div>
+                    <div class="demo-images">
+                            <img class="project-image" src="./images/cocktail-menu-demos.png" alt="Cocktail Menu laptop and phone screenshots">
+                        </div>
                 </div>
                 <p class="project-description cocktail-menu-text">
                     Using the Cocktail Menu Maker, users can find cocktails based on the alcohol and mixing ingredients they select. For some,
@@ -244,39 +249,24 @@
         </section>
     </section>
     <section class="experience" id="experience">
-        <h2>Prior Work Experience</h2>
-        <section class="job">
+        <div class="bounce">
+            <h2>Prior Work Experience</h2>
+        </div>
+        <section class="jobs">
             <h3>Duty First Consulting</h3>
             <div class="tasks">
                 <div class="contract">
+                    <p>Contributed to the Centers for Medicare &amp; Medicaid Services (CMS) Consumer Information and Insurance
+                        Oversight (CCIIO) Office of the Director (OD) and Plan Management (PM) projects. Also provided communications
+                        support to VA’s Office of Public Health (OPH) to develop and promote their communications objectives
+                        throughout the Veterans Health Administration (VHA).
+                    </p>
                     <ul>
-                        <li>Contributed to the Centers for Medicare &amp; Medicaid Services (CMS) Consumer Information and Insurance
-                            Oversight (CCIIO) Office of the Director (OD) and Plan Management (PM) projects.
-                            <ul>
-                                <li>Created an implementation plan, communications plan, and project feedback plan for a new
-                                    certification system pilot for health insurance issuers, states, and account managers.</li>
-                                <li>Conducted ongoing analysis on returned mail from notices sent to consumers regarding their
-                                    applications and policies on the marketplace exchanges.</li>
-                                <li>Aided in Lessons Learned. Compiled a series of evaluations and improvements for Form 1095-A
-                                    from all parties involved in the project. Created a Lessons Learned Retrospective toolkit
-                                    for CMS to use on various projects.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contract">
-                    <ul class="contract">
-                        <li>Provided communications support to VA’s Office of Public Health (OPH) to develop and promote their
-                            communications objectives throughout the Veterans Health Administration (VHA).
-                            <ul>
-                                <li>Assisted in the reforming of a strategic communications plan that outlined OPH’s mission
-                                    and objectives, and provided a series of tactical recommendations to help improve OPH’s
-                                    current communication practices.</li>
-                                <li>Analyzed web-based communications toolkit popularity and created a report on the most popular
-                                    toolkit pages for each field of study for the communications team to examine where to
-                                    focus future outreach efforts.</li>
-                            </ul>
-                        </li>
+                        <li>Handled weekly Google Analytics reports on issuer-facing certification guidelines website.</li>
+                        <li>Analyzed data on numerous projects to find regulatory compliance and abnormalities in outreach.</li>
+                        <li>Worked on quality assurance and process improvement initiatives.</li>
+                        <li>Created implementation, communications, and project feedback plans for a new certification system
+                            pilot for health insurance issuers, states, and account managers.</li>
                     </ul>
                 </div>
             </div>
@@ -287,16 +277,17 @@
         (function ($) {
             $(document).ready(function () {
                 $(window).scroll(function () {
-                    if ($(this).scrollTop() > 300) {
-                        $('#nav-bar').fadeIn(300);
+                    if ($(this).scrollTop() > 200) {
+                        $('#nav-bar').fadeIn(200);
                         $('#nav-bar').css('display', 'flex');
                     } else {
-                        $('#nav-bar').fadeOut(300);
+                        $('#nav-bar').fadeOut(200);
                     }
                 });
             });
         })(jQuery);
     </script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>
