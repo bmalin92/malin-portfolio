@@ -1,5 +1,5 @@
 body {
-	max-width: 640px;
+	max-width: 600px;
 	min-height: 200vh;
 	margin-left: auto;
 	margin-right: auto;
@@ -33,6 +33,7 @@ h1 {
 
 h2, h3 {
 	color: #111;
+	text-align: center;
 }
 
 a {
@@ -305,21 +306,23 @@ section.flex-halves {
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	margin-top: 50px;
+	margin-bottom: 0;
 }
 	
- .bio .bounce {
+.bio .bounce {
 	bottom: 30px;
 	left: 50%;
 	-webkit-border-radius:50%;
 	-moz-border-radius:50%;
 	-ms-border-radius:50%;
 	border-radius:50%;
-	animation: bounce 4s infinite;
-	-webkit-animation: bounce 4s infinite;
-	-moz-animation: bounce 4s infinite;
-	-o-animation: bounce 4s infinite;
+	animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	-moz-animation: bounce 2s infinite;
+	-o-animation: bounce 2s infinite;
 	cursor: pointer;
- }
+	text-align: center;
+}
 
  .bio .bounce:hover {
 	text-shadow: 0 0 1px #666;
@@ -417,38 +420,36 @@ section.flex-halves {
 .past-projects h2 {
 	text-align: center;
 	margin-top: 50px;
-	margin-bottom: 40px;
-}
-
-.demo-and-tech-container {
-	display: flex;
+	margin-bottom: 50px;
 }
 
 .demo-images {
 	text-align: center;
+	margin: 25px;
+	align-items: center;
 }
 
 .project-image {
-	width: 100%;
+	width: 75%;
+	align-self: center;
 }
 
 .technologies-container {
 	display: flex;
 	flex-wrap: wrap;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
-	margin: 10px;
-	max-height: 280px;
+	margin: auto;
 }
 
 .technology-icon {
 	flex: 1;
 	padding: 0;
 	border: 0;
-	vertical-align: baseline;
 	text-align: center;
 	margin-left: 5px;
 	margin-right: 5px;
+	font-size: 12px;
 }
 
 .technology-icon img {
@@ -475,13 +476,15 @@ section.flex-halves {
 
 .experience h2 {
 	text-align: center;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
 	margin-top: 50px;
-	margin-bottom: 40px;
-	cursor: pointer;
+	margin-bottom: 0;
 }
 
 .jobs {
 	display: none;
+	margin-top: 50px;
 }
 
 .jobs ul {
@@ -495,11 +498,12 @@ section.flex-halves {
 	-moz-border-radius:50%;
 	-ms-border-radius:50%;
 	border-radius:50%;
-	animation: bounce 4s infinite;
-	-webkit-animation: bounce 4s infinite;
-	-moz-animation: bounce 4s infinite;
-	-o-animation: bounce 4s infinite;
+	animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	-moz-animation: bounce 2s infinite;
+	-o-animation: bounce 2s infinite;
 	cursor: pointer;
+	text-align: center;
  }
 
  .experience .bounce:hover {
