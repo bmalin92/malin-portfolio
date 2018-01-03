@@ -148,7 +148,7 @@ a {
 
 hr {
 	width: 40%;
-	color: #888
+	color: #888;
 }
 
 .past-projects {
@@ -183,6 +183,7 @@ hr {
 	flex-direction: row;
 	justify-content: center;
 	margin: auto;
+	margin-top: 15px;
 }
 
 .technology-icon {
@@ -351,7 +352,6 @@ hr {
 	/* PROJECTS */
 
 	.past-projects {
-
 		margin-top: 25px;
 		margin-bottom: 25px;
 	}
@@ -359,6 +359,14 @@ hr {
 	.past-projects h2 {
 		margin-top: 25px;
 		margin-bottom: 25px;
+	}
+
+	.past-projects h3 {
+		margin: 0;
+	}
+
+	.project-links ul {
+		margin-bottom: 0;
 	}
 
 	.demo-images {
@@ -387,24 +395,15 @@ hr {
 	/* WORK EXPERIENCE */
 
 	#experience {
-		margin-top: 25px;
-		border-top: 1px solid #666;
-		margin-bottom: 50px;
+		margin-bottom: 25px;
 	}
 
 	.experience h2 {
-		text-align: center;
-		margin-top: 50px;
-		margin-bottom: 0;
+		margin-top: 25px;
 	}
 
 	.jobs {
-		margin-top: 50px;
-	}
-
-	.jobs ul {
-		list-style-type: square;
-		text-align: left;
+		margin-top: 25px;
 	}
 
 
@@ -412,28 +411,16 @@ hr {
 
 	#education {
 		margin-top: 25px;
-		border-top: 1px solid #666
 	}
 
 	.education h2 {
-		text-align: center;
-		margin-top: 50px;
-		margin-bottom: 0;
+		margin-top: 25px;
 	}
 
 	.thinkful {
-		margin-top: 50px;
+		margin-top: 25px;
 	}
-
-	.gwu {
-		margin-top: 0;
-	}
-
-	.thinkful h4, .thinkful h5, .gwu h4, .gwu h5 {
-		margin: 5px;
-		text-align: center;
-	}
-
+	
 	.education hr {
 		width: 20%;
 		color: #888;
