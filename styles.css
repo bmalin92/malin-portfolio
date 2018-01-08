@@ -206,7 +206,7 @@ hr {
 	margin-bottom: 10px;
 }
 
-.project-links {
+.project-links ul {
 	text-align: center;
 	margin: 0;
 	padding: 0;
@@ -220,7 +220,7 @@ hr {
 .project-link a {
 	border: 2px solid black;
   font-weight: 700;
-  padding: 5px;
+	padding: 5px;
 }
 
 .project-link a:hover {
