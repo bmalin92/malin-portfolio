@@ -194,12 +194,12 @@ hr {
 }
 
 .technology-icon {
-	flex: 1;
 	padding: 0;
 	border: 0;
+	width: 35px;
 	text-align: center;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
 	font-size: 12px;
 }
 
@@ -234,6 +234,31 @@ hr {
 	background-color: black;
 	color: white;
 	transition: 100ms;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px;
+	border: 1px solid black;
+	position: absolute;
+	bottom: 105%;
+	z-index: 1;
+	left: 50%;
+   -webkit-transform: translateX(-50%); /* Safari iOS */
+   transform: translateX(-50%);
+}
+
+.technology-icon:hover .tooltiptext {
+	visibility: visible;
 }
 
 
