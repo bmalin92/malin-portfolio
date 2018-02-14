@@ -84,6 +84,10 @@ a {
 	height: 100px;
 }
 
+.computer-builds img:hover {
+	box-shadow: 0px 0px 10px #1966D2;
+}
+
 /* NAV BAR */
 
 #nav-bar {
