@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Lab/Branch Landing — design demo</title>
+    <link
+      rel="stylesheet"
+      href="/client-assets/styles/app.css"
+    />
+    <style>
+      /* Demo wrapper — minimal page chrome so dk-main-container fills the frame */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+      .demo-page {
+        padding: 1.5rem 1.25rem 2.5rem;
+      }
+      /* Make every link/button inert so nothing navigates */
+      a {
+        cursor: default;
+      }
+    </style>
+    <script>
+      // Defensively neutralize all link/button navigation in the embed.
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a[href]').forEach(function (a) {
+          a.setAttribute('href', '#');
+          a.addEventListener('click', function (e) {
+            e.preventDefault();
+          });
+        });
+        document.querySelectorAll('button').forEach(function (b) {
+          b.setAttribute('type', 'button');
+          b.addEventListener('click', function (e) {
+            e.preventDefault();
+          });
+        });
+      });
+    </script>
+  </head>
+  <body class="page-lang-en">
+    <main id="main" class="pt-branch themable accent-mauve">
+      <div class="grid demo-page">
+        <div class="dk-main-container">
+          <div class="dk-content">
+
+            <!-- Begin body content (ported from the production lab/branch
+                 landing template with all text replaced by lorem ipsum
+                 placeholders) -->
+
+            <div class="branch-header landing im-lab-branch">
+              <div class="header-background theme-bg-gradient theme-border">
+                <h1 itemprop="name" class="title">
+                  Lorem Ipsum Dolor Sit
+                </h1>
+                <div class="chiefs">
+                  <div class="chief">
+                    <img
+                      src="https://placehold.co/300x300"
+                      width="300"
+                      height="300"
+                      alt="Lorem ipsum"
+                      class="chief-img"
+                    />
+                    <a href="#" class="name">Lorem Ipsum, Ph.D.</a>
+                    <p class="chief-title">Dolor Sit</p>
+                    <span class="chief-email">
+                      <i class="i-envelope"></i>
+                      <a href="#">lorem@ipsum.dolor</a>
+                    </span>
+                  </div>
+                  <div class="chief">
+                    <img
+                      src="https://placehold.co/300x300"
+                      width="300"
+                      height="300"
+                      alt="Consectetur adipiscing"
+                      class="chief-img"
+                    />
+                    <a href="#" class="name">Consectetur Adipiscing, Ph.D.</a>
+                    <p class="chief-title">Elit Aenean</p>
+                    <span class="chief-email">
+                      <i class="i-envelope"></i>
+                      <a href="#">consectetur@ipsum.dolor</a>
+                    </span>
+                  </div>
+                </div>
+                <div class="branch-description">
+                  <div class="branch-info">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed sodales consectetur laoreet. Integer ac ex venenatis,
+                    maximus augue at, tincidunt nulla.
+                  </div>
+                  <a class="button-ghost" href="#">Lorem Ipsum Dolor</a>
+                </div>
+                <nav
+                  class="dk-tabnav"
+                  role="navigation"
+                  aria-label="Lorem ipsum"
+                >
+                  <button type="button" class="tn-drop-button">
+                    Lorem Ipsum
+                  </button>
+                  <ul>
+                    <li class="tn-current"><span>Lorem Ipsum Dolor</span></li>
+                    <li><a href="#">Consectetur Adipiscing</a></li>
+                    <li><a href="#">Elit Sed Sodales</a></li>
+                    <li><a href="#">Integer Venenatis</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+
+            <h2>Lorem Ipsum Dolor Sit Amet</h2>
+            <div class="branch-sections-list">
+              <ul>
+                <li>
+                  <a href="#"
+                    ><span>Consectetur Adipiscing Elit Sed</span></a
+                  ><br />
+                  Sodales Consectetur, Ph.D.
+                </li>
+                <li>
+                  <a href="#"
+                    ><span>Laoreet Integer Ex Venenatis</span></a
+                  ><br />
+                  Maximus Augue, Ph.D.
+                </li>
+                <li>
+                  <a href="#"
+                    ><span>Tincidunt Nulla Sollicitudin Accumsan</span></a
+                  ><br />
+                  Arcu Fermentum, Ph.D.
+                </li>
+                <li>
+                  <a href="#"
+                    ><span>Vivamus Tellus Erat Pellentesque</span></a
+                  ><br />
+                  Aliquam Ligula, Ph.D.
+                </li>
+              </ul>
+            </div>
+
+            <div class="box thick">
+              <div class="action-link no-padding end-arrow">
+                Vivamus tellus erat, pellentesque
+                <a href="#">non sollicitudin ac</a>
+              </div>
+            </div>
+
+            <div class="branch-sections">
+              <div class="box thin theme-border">
+                <h3 id="lorem-1">Consectetur Adipiscing Elit Sed</h3>
+                <p>
+                  <a href="#">Sodales Consectetur, Ph.D.</a>, Lorem Ipsum
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sollicitudin accumsan arcu fermentum tincidunt. Vivamus
+                  tellus erat, pellentesque non sollicitudin ac, aliquam a
+                  ligula. Lorem ipsum dolor sit amet, consectetur adipiscing
+                  elit.
+                </p>
+                <div class="button-row">
+                  <a
+                    class="button white-fill theme-border"
+                    href="#"
+                    aria-describedby="lorem-1"
+                    >Lorem Ipsum Dolor</a
+                  >
+                </div>
+              </div>
+
+              <div class="box thin theme-border">
+                <h3 id="lorem-2">Laoreet Integer Ex Venenatis</h3>
+                <p>
+                  <a href="#">Maximus Augue, Ph.D.</a>, Lorem Ipsum
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sollicitudin accumsan arcu fermentum tincidunt. Vivamus
+                  tellus erat, pellentesque non sollicitudin ac, aliquam a
+                  ligula. Lorem ipsum dolor sit amet, consectetur adipiscing
+                  elit.
+                </p>
+                <div class="button-row">
+                  <a
+                    class="button white-fill theme-border"
+                    href="#"
+                    aria-describedby="lorem-2"
+                    >Lorem Ipsum Dolor</a
+                  >
+                </div>
+              </div>
+
+              <div class="box thin theme-border">
+                <h3 id="lorem-3">Tincidunt Nulla Sollicitudin Accumsan</h3>
+                <p>
+                  <a href="#">Arcu Fermentum, Ph.D.</a>, Lorem Ipsum
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sollicitudin accumsan arcu fermentum tincidunt. Vivamus
+                  tellus erat, pellentesque non sollicitudin ac, aliquam a
+                  ligula. Lorem ipsum dolor sit amet, consectetur adipiscing
+                  elit.
+                </p>
+                <div class="button-row">
+                  <a
+                    class="button white-fill theme-border"
+                    href="#"
+                    aria-describedby="lorem-3"
+                    >Consectetur Adipiscing</a
+                  >
+                </div>
+              </div>
+
+              <div class="box thin theme-border">
+                <h3 id="lorem-4">Vivamus Tellus Erat Pellentesque</h3>
+                <p>
+                  <a href="#">Aliquam Ligula, Ph.D.</a>, Lorem Ipsum
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sollicitudin accumsan arcu fermentum tincidunt. Vivamus
+                  tellus erat, pellentesque non sollicitudin ac, aliquam a
+                  ligula. Lorem ipsum dolor sit amet, consectetur adipiscing
+                  elit.
+                </p>
+                <div class="button-row">
+                  <a
+                    class="button white-fill theme-border"
+                    href="#"
+                    aria-describedby="lorem-4"
+                    >Lorem Ipsum Dolor</a
+                  >
+                </div>
+              </div>
+
+            </div>
+
+            <h2>Diam Sollicitudin Tempor Id Eu Nisl</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              sollicitudin accumsan arcu fermentum tincidunt. Vivamus tellus
+              erat, pellentesque non sollicitudin ac, aliquam a ligula.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              sollicitudin accumsan arcu fermentum tincidunt. Vivamus tellus
+              erat, pellentesque non sollicitudin ac, aliquam a ligula.
+            </p>
+            <p>
+              Vivamus tellus
+              <a href="#">erat pellentesque non sollicitudin</a>.
+            </p>
+
+            <!-- End body content -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

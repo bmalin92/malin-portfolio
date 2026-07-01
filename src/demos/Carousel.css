@@ -1,0 +1,151 @@
+.carousel-demo {
+  --cd-h: 320px;
+  position: relative;
+  height: calc(var(--cd-h) + 80px);
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cd-stage {
+  position: relative;
+  width: 100%;
+  height: var(--cd-h);
+  outline: none;
+}
+
+.cd-stage:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 6px;
+  border-radius: var(--radius-md);
+}
+
+.cd-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(360px, 75%);
+  height: var(--cd-h);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elev);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  transition: transform 320ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 320ms ease, filter 320ms ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.cd-slide:not(.is-current) {
+  filter: blur(1.5px) brightness(0.95);
+  opacity: 0.75;
+}
+
+.cd-slide.is-current {
+  z-index: 2;
+}
+
+.cd-slide.is-far {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cd-image {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 1.25rem;
+}
+
+.cd-image span {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.cd-content {
+  padding: 1rem 1.25rem 1.25rem;
+  background: var(--bg-elev);
+}
+
+.cd-content h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  color: var(--fg);
+}
+
+.cd-content p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+.cd-btn {
+  position: absolute;
+  top: calc(var(--cd-h) / 2);
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), background var(--transition);
+}
+
+.cd-btn:hover:not(:disabled) {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.cd-btn:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cd-btn-prev {
+  left: 1rem;
+}
+.cd-btn-next {
+  right: 1rem;
+}
+
+.cd-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.cd-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all var(--transition);
+}
+
+.cd-dot.is-current {
+  background: var(--accent);
+  width: 24px;
+  border-radius: 4px;
+}
