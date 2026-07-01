@@ -1,0 +1,84 @@
+.demo-image {
+  position: relative;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.demo-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: filter 220ms ease;
+}
+
+.demo-image-toggle {
+  display: none;
+}
+
+/* Dark mode: dim by default; show a large centered reveal button. */
+:root[data-theme='dark'] .demo-image:not(.is-revealed) img {
+  filter: brightness(0.45) saturate(0.85);
+}
+
+:root[data-theme='dark'] .demo-image:not(.is-revealed)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.35)
+  );
+  pointer-events: none;
+}
+
+:root[data-theme='dark'] .demo-image-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  position: absolute;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg);
+  background: rgba(20, 20, 20, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+:root[data-theme='dark'] .demo-image-toggle:hover {
+  background: rgba(30, 30, 30, 0.9);
+  border-color: rgba(255, 255, 255, 0.32);
+  transform: translate(-50%, -50%) scale(1.03);
+}
+
+:root[data-theme='dark'] .demo-image:not(.is-revealed) .demo-image-toggle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.7rem 1.3rem;
+  font-size: 0.95rem;
+}
+
+:root[data-theme='dark'] .demo-image:not(.is-revealed) .demo-image-toggle:hover {
+  transform: translate(-50%, -50%) scale(1.03);
+}
+
+/* Revealed state — small pill in the top-right corner. */
+:root[data-theme='dark'] .demo-image.is-revealed .demo-image-toggle {
+  top: 0.75rem;
+  right: 0.75rem;
+  transform: none;
+}
+
+:root[data-theme='dark'] .demo-image.is-revealed .demo-image-toggle:hover {
+  transform: scale(1.03);
+}

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HexagonHero } from '../demos/HexagonHero';
 import { Carousel } from '../demos/Carousel';
+import { DemoImage } from '../demos/DemoImage';
 import { GfrDemo } from '../demos/client/GfrDemo';
 import { LabBranchEmbed } from '../demos/client/LabBranchEmbed';
 import './Home.css';
@@ -65,18 +66,10 @@ export function Home() {
           </p>
         </div>
         <div className="case-demo case-demo-bare">
-          <img
-            className="case-image"
+          <DemoImage
             src="/IMG_9083.PNG"
             alt="Screenshot of the employee compensation management tool showing the filter sidebar, an employee award list with cash and time-off entries, and a pool budget summary."
-            loading="lazy"
           />
-        </div>
-        <div className="case-meta">
-          <Tag>React</Tag>
-          <Tag>React Context</Tag>
-          <Tag>Keyframe animations</Tag>
-          <Tag>Enterprise UX</Tag>
         </div>
       </section>
 
