@@ -24,6 +24,193 @@
       a {
         cursor: default;
       }
+
+      /* Dark mode — activated when parent portfolio is in dark theme.
+         A cohesive dark palette layered over the client's stylesheet:
+           surface        #141414   (matches portfolio bg)
+           card           #1c1c1c
+           card-elevated  #232323
+           border         #2e2e2e
+           accent (mauve) #b884a0   (softened mauve for dark bg)
+           text           #e5e5e5
+           text-muted     #a0a0a0
+           link           #82a8ff */
+      body.is-dark {
+        background: #141414;
+        color: #e5e5e5;
+      }
+      body.is-dark .dk-main-container,
+      body.is-dark .dk-content {
+        background: #141414;
+        color: #e5e5e5;
+      }
+      body.is-dark h1,
+      body.is-dark h2,
+      body.is-dark h3,
+      body.is-dark h4,
+      body.is-dark h5,
+      body.is-dark h6 {
+        color: #f4f4f4;
+      }
+      body.is-dark p,
+      body.is-dark li,
+      body.is-dark .chief-title,
+      body.is-dark .branch-info,
+      body.is-dark .action-link {
+        color: #cfcfcf;
+      }
+      body.is-dark a {
+        color: #82a8ff;
+      }
+      body.is-dark a:hover {
+        color: #b3c9ff;
+      }
+
+      /* Hero card + mauve accent stripe */
+      body.is-dark .branch-header .header-background {
+        background: #1c1c1c;
+        border: 1px solid #2e2e2e;
+        box-shadow: inset 0 4px 0 #b884a0;
+        padding-top: 1.75rem;
+      }
+      body.is-dark .branch-header .title {
+        color: #f7f7f7;
+      }
+
+      /* Chief cards */
+      body.is-dark .chief-title,
+      body.is-dark .chief-email i {
+        color: #a0a0a0;
+      }
+      body.is-dark .chief img {
+        filter: brightness(0.82) contrast(1.05);
+        border-radius: 50%;
+      }
+      body.is-dark .chief a.name {
+        color: #f4f4f4;
+      }
+      body.is-dark .chief a.name:hover {
+        color: #b884a0;
+      }
+
+      /* Description panel */
+      body.is-dark .branch-description {
+        background: rgba(184, 132, 160, 0.06);
+        border-top: 1px solid rgba(184, 132, 160, 0.25);
+      }
+      body.is-dark .branch-info {
+        color: #cfcfcf;
+      }
+
+      /* Ghost button */
+      body.is-dark .button-ghost {
+        background: transparent;
+        border: 1px solid #b884a0;
+        color: #b884a0;
+      }
+      body.is-dark .button-ghost:hover {
+        background: rgba(184, 132, 160, 0.12);
+        color: #d4a6bc;
+      }
+
+      /* Tab nav — mirrors the light-mode structure (3px top border on each
+         tab, translucent bar container). Current tab keeps its mauve top
+         stripe and gains a fill; non-current tabs stay flat. */
+      body.is-dark .dk-tabnav {
+        background: rgba(255, 255, 255, 0.04);
+      }
+      body.is-dark .dk-tabnav ul,
+      body.is-dark .dk-tabnav ul li {
+        background: transparent;
+        color: #cfcfcf;
+      }
+      body.is-dark .dk-tabnav li a {
+        background: transparent;
+        color: #cfcfcf;
+        border-top-color: transparent;
+      }
+      /* Current tab: mauve top stripe + elevated dark fill + bold light text */
+      body.is-dark .dk-tabnav li.tn-current span {
+        background: #262626;
+        color: #f4f4f4;
+        border-top-color: #b884a0;
+      }
+      /* Hover: pale gray top border to preview the "active" affordance,
+         subtle fill, no client-CSS underline. Covers both :hover and the
+         client's .focus class (used for keyboard focus). */
+      body.is-dark .dk-tabnav li:not(.tn-current) a:hover,
+      body.is-dark .dk-tabnav li:not(.tn-current) a:focus,
+      body.is-dark .dk-tabnav > ul > li:not(.tn-current):hover > :first-child,
+      body.is-dark .dk-tabnav > ul > li:not(.tn-current):hover > :first-child > a,
+      body.is-dark .dk-tabnav > ul > li:not(.tn-current):hover > :first-child > span,
+      body.is-dark .dk-tabnav > ul > li:not(.tn-current).focus > :first-child,
+      body.is-dark .dk-tabnav > ul > li:not(.tn-current).focus > :first-child > a,
+      body.is-dark .dk-tabnav > ul > li:not(.tn-current).focus > :first-child > span {
+        background: #262626 !important;
+        color: #ffffff !important;
+        border-top-color: #6b6b6b !important;
+        text-decoration: none !important;
+      }
+      /* Kill the client CSS's 4px white bar at the bottom of hovered/focused
+         and current tabs — that's the "giant underline" it renders */
+      body.is-dark .dk-tabnav > ul > li:hover > :first-child::after,
+      body.is-dark .dk-tabnav > ul > li.focus > :first-child::after,
+      body.is-dark .dk-tabnav > ul > li.tn-current::after {
+        display: none !important;
+      }
+      /* Also disable the box-shadow the client applies to hovered tabs */
+      body.is-dark .dk-tabnav > ul > li:hover > *,
+      body.is-dark .dk-tabnav > ul > li.focus > * {
+        box-shadow: none !important;
+      }
+      /* Dropdown button (mobile collapsed nav) */
+      body.is-dark .dk-tabnav .tn-drop-button {
+        background: #1f1f1f;
+        color: #e5e5e5;
+        border: 1px solid #333;
+      }
+      body.is-dark .dk-tabnav .tn-drop-button:hover {
+        background: #262626;
+        border-color: #b884a0;
+        color: #ffffff;
+      }
+
+      /* Section list (Investigators list) */
+      body.is-dark .branch-sections-list {
+        background: transparent;
+      }
+      body.is-dark .branch-sections-list ul li {
+        border-bottom: 1px solid #262626;
+      }
+
+      /* Thick highlight box */
+      body.is-dark .box.thick {
+        background: #1c1c1c;
+        border: 1px solid #2e2e2e;
+        border-left: 4px solid #b884a0;
+      }
+
+      /* Investigator cards */
+      body.is-dark .branch-sections .box.thin,
+      body.is-dark .box.thin.theme-border {
+        background: #1c1c1c;
+        border: 1px solid #2e2e2e;
+      }
+      body.is-dark .branch-sections .box.thin h3 {
+        color: #f4f4f4;
+      }
+
+      /* Filled buttons inside the section cards */
+      body.is-dark .button.white-fill,
+      body.is-dark .button.white-fill.theme-border {
+        background: #232323;
+        border: 1px solid #b884a0;
+        color: #e5e5e5;
+      }
+      body.is-dark .button.white-fill:hover {
+        background: #b884a0;
+        color: #141414;
+      }
     </style>
     <script>
       // Defensively neutralize all link/button navigation in the embed.
@@ -40,6 +227,20 @@
             e.preventDefault();
           });
         });
+        // Mirror the parent portfolio's theme.
+        function syncTheme() {
+          try {
+            var t = window.parent.document.documentElement.getAttribute('data-theme');
+            document.body.classList.toggle('is-dark', t === 'dark');
+          } catch (e) {}
+        }
+        syncTheme();
+        try {
+          new MutationObserver(syncTheme).observe(
+            window.parent.document.documentElement,
+            { attributes: true, attributeFilter: ['data-theme'] }
+          );
+        } catch (e) {}
       });
     </script>
   </head>

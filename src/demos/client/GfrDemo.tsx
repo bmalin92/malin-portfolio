@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GFR } from './Gfr';
 import './client-embed.css';
 
@@ -37,8 +37,35 @@ const ChildDisclaimer = () => (
   </div>
 );
 
+const SIDE_BY_SIDE_MIN = 1024;
+
 export function GfrDemo() {
   const [mode, setMode] = useState<'adult' | 'child'>('adult');
+  const [sideBySide, setSideBySide] = useState(() =>
+    typeof window === 'undefined'
+      ? false
+      : window.matchMedia(`(min-width: ${SIDE_BY_SIDE_MIN}px)`).matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia(`(min-width: ${SIDE_BY_SIDE_MIN}px)`);
+    const handler = (e: MediaQueryListEvent) => setSideBySide(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  if (sideBySide) {
+    return (
+      <div className="client-embed client-embed-split">
+        <div className="client-embed-col">
+          <GFR key="adult" adult="adult" disclaimer={<AdultDisclaimer />} />
+        </div>
+        <div className="client-embed-col">
+          <GFR key="child" adult="child" disclaimer={<ChildDisclaimer />} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="client-embed">

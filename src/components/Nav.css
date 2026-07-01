@@ -151,7 +151,7 @@
     padding: 1rem 1.5rem 2rem;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
-    transform: translateY(-110%);
+    transform: translateY(calc(-100% - 65px));
     transition: transform var(--transition);
   }
   .nav-links[data-open='true'] {

@@ -97,6 +97,12 @@
   border: 0;
 }
 
+@media (max-width: 640px) {
+  .case-demo {
+    padding: 0.5rem;
+  }
+}
+
 .case-meta {
   display: flex;
   gap: 0.5rem;

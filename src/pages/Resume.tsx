@@ -167,7 +167,7 @@ export function Resume() {
               </li>
               <li>
                 <span>Location</span>
-                <span>Fairfax, VA</span>
+                <span>Vienna, VA</span>
               </li>
             </ul>
           </div>

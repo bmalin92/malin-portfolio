@@ -83,7 +83,7 @@ export function HexagonHero() {
         <p className="hh-tagline">
           <span>Senior Frontend Engineer</span>
           <span className="hh-dot" />
-          <span>Fairfax, VA</span>
+          <span>Vienna, VA</span>
         </p>
       </div>
 

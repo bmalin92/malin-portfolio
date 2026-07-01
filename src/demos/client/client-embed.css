@@ -46,9 +46,59 @@
     0 6px 24px rgba(0, 0, 0, 0.04);
 }
 
-/* Dark portfolio mode — keep the embed panel light so its tokens still read */
+@media (max-width: 640px) {
+  .client-embed {
+    padding: 0.75rem;
+  }
+  .client-embed .dk-form.gfr-calculator {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Dark portfolio mode — recolor the embed to blend with the dark theme */
 :root[data-theme='dark'] .client-embed {
-  background: #f6f7f8;
+  --rb-white: #1a1a1a;
+  --rb-text-general: #d4d4d4;
+  --rb-text-dark: #f4f4f4;
+  --rb-text-red: #ff6d6d;
+  --rb-text-teal: #6fd0dd;
+  --rb-text-blue: #6fb3ff;
+  --rb-link-hover: #a5cbff;
+  --rb-button-outline: #3a3a3a;
+  --rb-divider-stroke: #333;
+  --rb-button-gray: #262626;
+  --rb-button-text: #e5e5e5;
+  --rb-bg-ash: #202020;
+  --rb-blue: #2a6dbd;
+  --rb-indigo: #4a5b8c;
+  --rb-mauve: #6d4d5e;
+  background: #141414;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+:root[data-theme='dark'] .client-embed .dk-form .field.text label,
+:root[data-theme='dark'] .client-embed .dk-form .field.text .label {
+  background-color: #141414;
+}
+
+:root[data-theme='dark'] .client-embed .dk-form .field.text input,
+:root[data-theme='dark'] .client-embed .dk-form .field.text select,
+:root[data-theme='dark'] .client-embed .dk-form .field.text .output,
+:root[data-theme='dark'] .client-embed .dk-form .dropdown select {
+  background: #1e1e1e;
+  color: var(--rb-text-general);
+}
+
+:root[data-theme='dark'] .client-embed .dk-form .field.options input[type='radio'] + label::before {
+  background: #1e1e1e;
+}
+
+:root[data-theme='dark'] .client-embed .gfr-disclaimer.alert {
+  background: #1a2634;
+  border-color: #2c405a;
+  color: var(--rb-text-general);
 }
 
 .client-embed * {
@@ -100,6 +150,44 @@
 
 .client-embed a:hover {
   color: var(--rb-link-hover);
+}
+
+/* ============================================================================
+ * Side-by-side split — desktop layout with adult + child calculators
+ * shown together instead of behind a tab toggle.
+ * ========================================================================== */
+.client-embed-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+:root[data-theme='dark'] .client-embed-split {
+  background: transparent;
+  box-shadow: none;
+}
+
+.client-embed-col {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 6px 24px rgba(0, 0, 0, 0.04);
+}
+
+:root[data-theme='dark'] .client-embed-col {
+  background: #141414;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.client-embed-split .client-embed-col .dk-form.gfr-calculator.v2 .field.text {
+  grid-column: span 4;
 }
 
 /* ============================================================================
@@ -501,8 +589,9 @@
   grid-column: span 4;
 }
 
-@media (max-width: 649px) {
-  .client-embed .dk-form.gfr-calculator.v2 .field {
+@media (max-width: 767px) {
+  .client-embed .dk-form.gfr-calculator.v2 .field,
+  .client-embed .dk-form.gfr-calculator.v2 .field.text {
     grid-column: span 4;
   }
 }
@@ -654,34 +743,31 @@
 
 .client-iframe-wrap {
   position: relative;
-  background: #fff;
+  background: var(--bg-elev);
   border-radius: var(--radius-md);
   overflow: hidden;
+  border: 1px solid var(--border);
 }
 
 .client-iframe-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   padding: 0.65rem 1rem;
-  background: #f4f4f6;
+  background: var(--bg-subtle);
   border-bottom: 1px solid var(--border);
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: #555;
-}
-
-.client-iframe-bar-url {
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: var(--fg-muted);
 }
 
 .client-iframe-bar-open {
-  color: #1568af;
+  color: var(--accent-2);
   text-decoration: underline;
   white-space: nowrap;
+}
+
+.client-iframe-bar-open:hover {
+  color: var(--accent);
 }

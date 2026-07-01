@@ -49,12 +49,6 @@ export function Home() {
             control.
           </p>
         </div>
-        <div className="case-meta">
-          <Tag>Vanilla JS</Tag>
-          <Tag>SCSS</Tag>
-          <Tag>Keyframe animations</Tag>
-          <Tag>A11y</Tag>
-        </div>
       </section>
 
       <section className="case">
@@ -70,12 +64,6 @@ export function Home() {
         </div>
         <div className="case-demo">
           <Carousel />
-        </div>
-        <div className="case-meta">
-          <Tag>Vanilla JS</Tag>
-          <Tag>Pointer events</Tag>
-          <Tag>aria-live</Tag>
-          <Tag>Inert</Tag>
         </div>
       </section>
 
@@ -96,13 +84,6 @@ export function Home() {
         <div className="case-demo">
           <GfrDemo />
         </div>
-        <div className="case-meta">
-          <Tag>React</Tag>
-          <Tag>Scientific formulae</Tag>
-          <Tag>Production embed</Tag>
-          <Tag>Form validation</Tag>
-          <Tag>A11y</Tag>
-        </div>
       </section>
 
       <section className="case">
@@ -119,12 +100,6 @@ export function Home() {
         </div>
         <div className="case-demo case-demo-bare">
           <LabBranchEmbed />
-        </div>
-        <div className="case-meta">
-          <Tag>Nunjucks templates</Tag>
-          <Tag>Production embed</Tag>
-          <Tag>Page suites</Tag>
-          <Tag>Information architecture</Tag>
         </div>
       </section>
 
@@ -147,8 +122,4 @@ export function Home() {
       </section>
     </>
   );
-}
-
-function Tag({ children }: { children: React.ReactNode }) {
-  return <span className="tag">{children}</span>;
 }
