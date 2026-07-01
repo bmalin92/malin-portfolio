@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HexagonHero } from '../demos/HexagonHero';
 import { Carousel } from '../demos/Carousel';
+import { DemoImage } from '../demos/DemoImage';
 import { GfrDemo } from '../demos/client/GfrDemo';
 import { LabBranchEmbed } from '../demos/client/LabBranchEmbed';
 import './Home.css';
@@ -48,6 +49,27 @@ export function Home() {
             Honors <code>prefers-reduced-motion</code> and ships a manual pause
             control.
           </p>
+        </div>
+      </section>
+
+      <section className="case">
+        <div className="case-head">
+          <h2>Employee compensation manager</h2>
+          <p className="page-lede">
+            Frontend UI for a tool that designates and manages over $10M in
+            employee compensation and bonuses. Built in React with React
+            Context for cycle-wide state; keyframe animations smooth award
+            entry and live budget updates. Filters span hundreds of
+            employees across ratings, eligibility, reviewers, and award
+            type, while the sidebar reconciles proposed cash and time-off
+            equivalents against the pool budget in real time.
+          </p>
+        </div>
+        <div className="case-demo case-demo-bare">
+          <DemoImage
+            src="/IMG_9083.PNG"
+            alt="Screenshot of the employee compensation management tool showing the filter sidebar, an employee award list with cash and time-off entries, and a pool budget summary."
+          />
         </div>
       </section>
 
