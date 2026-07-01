@@ -132,6 +132,23 @@ export function Home() {
 
       <section className="case">
         <div className="case-head">
+          <h2>Research landing page</h2>
+          <p className="page-lede">
+            Page templates for a research site&apos;s Labs &amp; Branches
+            section: branch landing pages, lab-branch detail pages, sub-section
+            news indexes, and staff directory rollups. The embed below is the
+            actual production page rendered from the client&apos;s design
+            system build &mdash; same HTML, same stylesheet, same fonts. Text
+            is lorem-ipsum for the demo; all links are inert.
+          </p>
+        </div>
+        <div className="case-demo case-demo-bare">
+          <LabBranchEmbed />
+        </div>
+      </section>
+
+      <section className="case">
+        <div className="case-head">
           <h2>eGFR calculators (Adult &amp; Child)</h2>
           <p className="page-lede">
             Revamped the Adult and Child estimated glomerular filtration rate
@@ -146,23 +163,6 @@ export function Home() {
         </div>
         <div className="case-demo">
           <GfrDemo />
-        </div>
-      </section>
-
-      <section className="case">
-        <div className="case-head">
-          <h2>Research landing page</h2>
-          <p className="page-lede">
-            Page templates for a research site&apos;s Labs &amp; Branches
-            section: branch landing pages, lab-branch detail pages, sub-section
-            news indexes, and staff directory rollups. The embed below is the
-            actual production page rendered from the client&apos;s design
-            system build &mdash; same HTML, same stylesheet, same fonts. Text
-            is lorem-ipsum for the demo; all links are inert.
-          </p>
-        </div>
-        <div className="case-demo case-demo-bare">
-          <LabBranchEmbed />
         </div>
       </section>
 
