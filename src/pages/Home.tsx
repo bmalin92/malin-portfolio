@@ -7,6 +7,13 @@ import { LabBranchEmbed } from '../demos/client/LabBranchEmbed';
 import './Home.css';
 
 export function Home() {
+  const scrollToTop = () => {
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  };
+
   return (
     <>
       <section className="hero">
@@ -39,16 +46,50 @@ export function Home() {
       <hr className="divider" />
 
       <section className="case">
-        <div className="case-head">
-          <span className="page-eyebrow">Selected work</span>
-          <h2>Hexagon hero banner</h2>
-          <p className="page-lede">
-            A milestone hero built for a client&apos;s 75th anniversary. Layered
-            hexagons orbit on independent timelines with eased acceleration; the
-            center mark holds steady while the background moves around it.
-            Honors <code>prefers-reduced-motion</code> and ships a manual pause
-            control.
-          </p>
+        <div className="case-head-row">
+          <div className="case-head">
+            <span className="page-eyebrow">Selected work</span>
+            <h2>Hexagon hero banner</h2>
+            <p className="page-lede">
+              A milestone hero built for a client&apos;s 75th anniversary.
+              Layered hexagons orbit on independent timelines with eased
+              acceleration; the center mark holds steady while the background
+              moves around it. Honors <code>prefers-reduced-motion</code> and
+              ships a manual pause control.
+            </p>
+          </div>
+          <button
+            type="button"
+            className="to-top-btn"
+            onClick={scrollToTop}
+            aria-label="Scroll back to top to replay the hexagon hero animation"
+          >
+            <span className="to-top-btn-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <line
+                  x1="12"
+                  y1="19"
+                  x2="12"
+                  y2="5"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+                <polyline
+                  points="5 12 12 5 19 12"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            <span className="to-top-btn-label">
+              <strong>Back to top</strong>
+              <span className="to-top-btn-sub">Replay the hexagon hero</span>
+            </span>
+          </button>
         </div>
       </section>
 
