@@ -18,12 +18,6 @@ const channels = [
     value: 'github.com/bmalin92',
     href: 'https://github.com/bmalin92',
     note: 'Where the side projects live.'
-  },
-  {
-    label: 'Phone',
-    value: '401-439-2413',
-    href: 'tel:+14014392413',
-    note: 'Text first, please.'
   }
 ];
 
@@ -34,7 +28,7 @@ export function Contact() {
         <span className="page-eyebrow">Contact</span>
         <h1 className="page-title">Let&apos;s build something.</h1>
         <p className="page-lede">
-          Based in Fairfax, VA. I&apos;m happy to talk frontend architecture,
+          Based in Vienna, VA. I&apos;m happy to talk frontend architecture,
           design systems, accessibility, or fantasy worldbuilding — pick a
           channel that suits you.
         </p>

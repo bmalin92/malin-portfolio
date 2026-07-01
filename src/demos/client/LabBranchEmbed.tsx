@@ -10,9 +10,6 @@ export function LabBranchEmbed() {
   return (
     <div className="client-iframe-wrap">
       <div className="client-iframe-bar">
-        <span className="client-iframe-bar-url">
-          /research-funding/labs-branches/branch
-        </span>
         <a
           className="client-iframe-bar-open"
           href="/client-assets/lab-branch.html"
