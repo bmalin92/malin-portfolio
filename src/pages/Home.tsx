@@ -53,6 +53,35 @@ export function Home() {
 
       <section className="case">
         <div className="case-head">
+          <h2>Employee compensation manager</h2>
+          <p className="page-lede">
+            Frontend UI for a tool that designates and manages over $10M in
+            employee compensation and bonuses. Built in React with React
+            Context for cycle-wide state; keyframe animations smooth award
+            entry and live budget updates. Filters span hundreds of
+            employees across ratings, eligibility, reviewers, and award
+            type, while the sidebar reconciles proposed cash and time-off
+            equivalents against the pool budget in real time.
+          </p>
+        </div>
+        <div className="case-demo case-demo-bare">
+          <img
+            className="case-image"
+            src="/IMG_9083.PNG"
+            alt="Screenshot of the employee compensation management tool showing the filter sidebar, an employee award list with cash and time-off entries, and a pool budget summary."
+            loading="lazy"
+          />
+        </div>
+        <div className="case-meta">
+          <Tag>React</Tag>
+          <Tag>React Context</Tag>
+          <Tag>Keyframe animations</Tag>
+          <Tag>Enterprise UX</Tag>
+        </div>
+      </section>
+
+      <section className="case">
+        <div className="case-head">
           <h2>Accessible carousel</h2>
           <p className="page-lede">
             A drag-aware carousel with keyboard navigation, an{' '}

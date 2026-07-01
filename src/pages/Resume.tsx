@@ -10,43 +10,34 @@ interface Role {
 }
 
 const roles: Role[] = [
-  {
-    company: 'Publicis Sapient',
-    title: 'Senior Frontend Engineer',
-    location: 'Arlington, VA',
-    start: 'Apr 2021',
-    end: 'Present',
-    bullets: [
-      "Redesigned client's homepage with milestone keyframe animations and responsive design, reaching 250K monthly page views.",
-      'Created multiple animated, reusable components for design upgrades seen by over 3M monthly users using vanilla JavaScript and CSS transitions.',
-      "Developed an embeddable BMI calculator widget with Svelte and revamped a client's eGFR calculator in React using advanced scientific formulae.",
-      'Engineered the frontend UI for a tool that designates and manages over $10M in employee compensation and bonuses using React, React Context, and keyframe animations.',
-      'Conducted code reviews on frontend code for multiple teams, from junior through senior architect-level work.'
-    ]
-  },
-  {
-    company: 'Publicis Sapient',
-    title: 'Frontend Engineer',
-    location: 'Arlington, VA',
-    start: 'May 2018',
-    end: 'Apr 2021',
-    bullets: [
-      "Contributed to a client's public website codebase and created multiple page-suite templates, helping weekly traffic increase by 50% to reach 200M users over seven years.",
-      "Built the frontend UI and mentored a junior developer on a client's grant application and management system, facilitating >$500M of funding annually using React, Redux, and SyncFusion."
-    ]
-  },
-  {
-    company: 'Duty First Consulting',
-    title: 'Analyst Consultant',
-    location: 'Vienna, VA',
-    start: 'Jan 2016',
-    end: 'Aug 2017',
-    bullets: [
-      'Compiled weekly Google Analytics reports for healthcare issuer-facing guidelines.',
-      'Analyzed outreach data to reduce unreceived mail by over 100K pieces a year.',
-      'Created implementation, communications, and project-feedback plans for an issuer certification pilot.'
-    ]
-  }
+	{
+		company: 'Publicis Sapient',
+		title: 'Senior Frontend Engineer',
+		location: 'Arlington, VA',
+		start: 'May 2018',
+		end: 'Present',
+		bullets: [
+			"Redesigned client's homepage with milestone keyframe animations and responsive design, reaching 250K monthly page views.",
+			'Created multiple animated, reusable components for design upgrades seen by over 3M monthly users using vanilla JavaScript and CSS transitions.',
+			"Developed an embeddable BMI calculator widget with Svelte and revamped a client's eGFR calculator in React using advanced scientific formulae.",
+			'Engineered the frontend UI for a tool that designates and manages over $10M in employee compensation and bonuses using React, React Context, and keyframe animations.',
+			'Conducted code reviews on frontend code for multiple teams, from junior through senior architect-level work.',
+			"Contributed to a client's public website codebase and created multiple page-suite templates, helping weekly traffic increase by 50% to reach 200M users over seven years.",
+			"Built the frontend UI and mentored a junior developer on a client's grant application and management system, facilitating >$500M of funding annually using React, Redux, and SyncFusion."
+		]
+	},
+	{
+		company: 'Duty First Consulting',
+		title: 'Analyst Consultant',
+		location: 'Vienna, VA',
+		start: 'Jan 2016',
+		end: 'Aug 2017',
+		bullets: [
+			'Compiled weekly Google Analytics reports for healthcare issuer-facing guidelines.',
+			'Analyzed outreach data to reduce unreceived mail by over 100K pieces a year.',
+			'Created implementation, communications, and project-feedback plans for an issuer certification pilot.'
+		]
+	}
 ];
 
 const skills = {

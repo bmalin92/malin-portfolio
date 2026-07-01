@@ -103,6 +103,15 @@
   }
 }
 
+.case-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
 .case-meta {
   display: flex;
   gap: 0.5rem;
