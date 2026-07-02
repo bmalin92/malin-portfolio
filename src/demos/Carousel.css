@@ -1,151 +1,292 @@
-.carousel-demo {
-  --cd-h: 320px;
+/* ============================================================================
+ * Accessible carousel — port of the production vanilla-JS/SCSS component,
+ * matched to the "featured people" instance shown in the reference recording:
+ * a near-square image sits on top of a full-width, opaque tinted caption card
+ * (polaroid style); adjacent slides are pushed a full width aside while their
+ * images are pulled back so they "peek" in from the edges as tall, blurred
+ * strips. Colors map onto the portfolio's theme tokens for light/dark mode.
+ * ========================================================================== */
+
+.carousel {
+  --carousel-width: 660px;
+  --content-height: 48px;
+  --img-w: 240px;
+  --img-h: 240px;
+  --peek: 5rem; /* how much of each neighbor image shows at the edge */
+  --card-overlap: 24px; /* how far the image sits over the caption card */
+
   position: relative;
-  height: calc(var(--cd-h) + 80px);
-  overflow: hidden;
+  width: 100%;
+  height: calc(var(--img-h) + var(--content-height) + 5.75rem);
+  margin-top: 1rem;
+  overflow-x: clip;
   touch-action: pan-y;
   user-select: none;
   -webkit-user-select: none;
 }
 
-.cd-stage {
-  position: relative;
-  width: 100%;
-  height: var(--cd-h);
-  outline: none;
-}
-
-.cd-stage:focus-visible {
+/* Keyboard-only focus ring (added on Tab, removed on pointer interaction). */
+.carousel.cs-tabbed:has(.carousel-slide:focus) {
   outline: 2px solid var(--fg);
-  outline-offset: 6px;
-  border-radius: var(--radius-md);
+  outline-offset: 5px;
+  border-radius: 3px;
 }
 
-.cd-slide {
+/* ----- navigation chevrons: bare icons over the peeking images ----- */
+.carousel > button {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(360px, 75%);
-  height: var(--cd-h);
-  border-radius: var(--radius-lg);
-  background: var(--bg-elev);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border);
-  transition: transform 320ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 320ms ease, filter 320ms ease;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  will-change: transform;
-}
-
-.cd-slide:not(.is-current) {
-  filter: blur(1.5px) brightness(0.95);
-  opacity: 0.75;
-}
-
-.cd-slide.is-current {
-  z-index: 2;
-}
-
-.cd-slide.is-far {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.cd-image {
-  position: relative;
-  flex: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: 1.25rem;
-}
-
-.cd-image span {
-  font-family: var(--font-mono);
-  font-size: 3rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.85);
-  letter-spacing: -0.05em;
-  line-height: 1;
-}
-
-.cd-content {
-  padding: 1rem 1.25rem 1.25rem;
-  background: var(--bg-elev);
-}
-
-.cd-content h4 {
-  margin: 0 0 0.25rem;
-  font-size: 1.1rem;
-  color: var(--fg);
-}
-
-.cd-content p {
-  margin: 0;
-  font-size: 0.875rem;
-  color: var(--fg-muted);
-}
-
-.cd-btn {
-  position: absolute;
-  top: calc(var(--cd-h) / 2);
+  top: calc(var(--img-h) / 2);
   transform: translateY(-50%);
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  color: var(--fg);
-  z-index: 3;
+  padding: 0;
+  border: none;
+  background: none;
+  z-index: 10;
+  cursor: pointer;
+  color: #fff;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), background var(--transition);
 }
 
-.cd-btn:hover:not(:disabled) {
-  background: var(--accent);
-  color: white;
-  transform: translateY(-50%) scale(1.05);
+.carousel > button svg {
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 0 0.4rem rgba(0, 0, 0, 0.55));
 }
 
-.cd-btn:disabled {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.cd-btn-prev {
+.carousel > button.btn-prev {
   left: 1rem;
 }
-.cd-btn-next {
+
+.carousel > button.btn-next {
   right: 1rem;
 }
 
-.cd-dots {
+@media (max-width: 650px) {
+  .carousel > button.btn-prev {
+    left: 0.25rem;
+  }
+
+  .carousel > button.btn-next {
+    right: 0.25rem;
+  }
+}
+
+.carousel > button:disabled {
+  visibility: hidden;
+}
+
+/* ----- slides ----- */
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  transition: transform 0.5s ease-in-out;
+  outline: none;
+}
+
+/* image row */
+.carousel-slide .cs-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: var(--img-h);
+  z-index: 5;
+}
+
+.carousel-slide .cs-img {
   position: absolute;
   left: 50%;
-  bottom: 1.25rem;
-  transform: translateX(-50%);
+  top: 0;
+  width: var(--img-w);
+  max-width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
-  gap: 10px;
+  align-items: flex-end;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  will-change: transform;
+  transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.carousel-slide .cs-img span {
+  font-family: var(--font-mono);
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* current: image centered, sharp, lifted off the card */
+.carousel-slide.cs-current {
+  transform: translateX(-50%);
+  z-index: auto;
+}
+
+.carousel-slide.cs-current .cs-img {
+  transform: translateX(-50%);
+  z-index: 2;
+  filter: blur(0);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+}
+
+.carousel-slide:not(.cs-current) .cs-img {
+  filter: blur(1.5px);
+}
+
+/* next: card shoved a full width right, image pulled back to peek in */
+.carousel-slide.cs-next {
+  z-index: 2;
+  transform: translateX(-50%) translateX(var(--carousel-width));
+}
+
+.carousel-slide.cs-next .cs-img {
+  transform: translateX(calc(var(--carousel-width) / -2 - var(--peek)));
+}
+
+.carousel-slide.cs-next.cs-final {
+  transform: translateX(-50%) translateX(calc(var(--carousel-width) * 2));
+}
+
+/* previous: mirror of next */
+.carousel-slide.cs-prev {
+  z-index: 2;
+  transform: translateX(-50%) translateX(calc(var(--carousel-width) * -1));
+}
+
+.carousel-slide.cs-prev .cs-img {
+  transform: translateX(calc(var(--carousel-width) / 2 - 100% + var(--peek)));
+}
+
+.carousel-slide.cs-prev.cs-final {
+  transform: translateX(-50%) translateX(calc(var(--carousel-width) * -2));
+}
+
+/* immediate next slide rides above so its peek reads in front at the edge */
+.carousel-slide.cs-top {
   z-index: 3;
 }
 
-.cd-dot {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: var(--border);
-  transition: all var(--transition);
+/* ----- caption card: full-width tinted surface the image sits on ----- */
+.carousel-slide .cs-box {
+  position: relative;
+  max-width: 600px;
+  margin: calc(-1 * var(--card-overlap)) auto 0;
+  padding: calc(var(--card-overlap) + 0.5rem) 1.75rem 1.75rem;
+  background: var(--accent-2-soft);
+  border-radius: 16px;
+  z-index: 1;
+  transition: transform 0.5s ease-in-out;
 }
 
-.cd-dot.is-current {
-  background: var(--accent);
-  width: 24px;
+.carousel-slide .cs-box .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  line-height: 1.4;
+}
+
+.carousel-slide .cs-box .content > * {
+  margin: 0;
+}
+
+.carousel-slide .cs-box .content h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--fg-muted);
+}
+
+.carousel-slide .cs-box .content p {
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+}
+
+/* ----- dot navigation (active dot reads as a hollow ring), below the card - */
+.cs-dots {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.cs-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 1px solid var(--fg-subtle);
+  background-color: var(--fg-subtle);
+  border-radius: 50%;
+  transition: background-color 0.25s linear;
+  outline-offset: 5px;
+  cursor: pointer;
+}
+
+.cs-dot.cs-current {
+  background-color: var(--bg-subtle);
+  pointer-events: none;
+}
+
+/* ----- skip link (visible on keyboard focus) ----- */
+.carousel .skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  z-index: 20;
+}
+
+.carousel .skip-link:not(:focus) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.carousel .skip-link:focus {
+  padding: 0.4rem 0.75rem;
   border-radius: 4px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ----- mobile ----- */
+@media (max-width: 650px) {
+  .carousel {
+    /* never wider than half the container (keeps the square + edge peeks) */
+    --img-w: min(240px, calc(var(--carousel-width) / 2));
+    --img-h: calc(var(--img-w) * 1.12);
+    --peek: 2.5rem;
+    height: calc(var(--img-h) + var(--content-height) + 5.5rem);
+  }
+
+  .carousel > button svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .carousel-slide .cs-box {
+    margin-inline: 1.25rem;
+    padding: calc(var(--card-overlap) + 0.75rem) 1.25rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide,
+  .carousel-slide .cs-img,
+  .carousel-slide .cs-box {
+    transition-duration: 0.001ms;
+  }
 }
