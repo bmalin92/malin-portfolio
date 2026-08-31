@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { HexagonHero } from '../demos/HexagonHero';
 import { Carousel } from '../demos/Carousel';
-import { DemoImage } from '../demos/DemoImage';
 import { GfrDemo } from '../demos/client/GfrDemo';
 import { LabBranchEmbed } from '../demos/client/LabBranchEmbed';
 import './Home.css';
