@@ -130,10 +130,8 @@ export function Home() {
 					<p className='page-lede'>
 						Page templates for a research site&apos;s Labs &amp; Branches
 						section: branch landing pages, lab-branch detail pages, sub-section
-						news indexes, and staff directory rollups. The embed below is the
-						actual production page rendered from the client&apos;s design system
-						build &mdash; same HTML, same stylesheet, same fonts. Text is
-						lorem-ipsum for the demo; all links are inert.
+						news indexes, and staff directory rollups. The embed below is a demo
+						page using the design system we designed for a client.
 					</p>
 				</div>
 				<div className='case-demo case-demo-bare'>
