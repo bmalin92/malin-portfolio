@@ -20,12 +20,12 @@ export function Home() {
 				<div className='hero-text'>
 					<span className='page-eyebrow'>Senior Frontend Engineer</span>
 					<h1>
-						Interfaces that ship,
+						Interfaces that ship, scale,
 						<br />
-						<span className='hero-accent'>scale, and stay accessible.</span>
+						<span className='hero-accent'>and stay accessible.</span>
 					</h1>
 					<p className='page-lede'>
-						I&apos;m Ben — a senior frontend engineer at Publicis Sapient. I
+						I&apos;m Ben, a senior frontend engineer at Publicis Sapient. I
 						build component libraries, design systems, and embeddable widgets
 						for clients, reaching millions of users.
 					</p>
@@ -121,12 +121,6 @@ export function Home() {
 						reconciles proposed cash and time-off equivalents against the pool
 						budget in real time.
 					</p>
-				</div>
-				<div className='case-demo case-demo-bare'>
-					<DemoImage
-						src='/IMG_9083.PNG'
-						alt='Screenshot of the employee compensation management tool showing the filter sidebar, an employee award list with cash and time-off entries, and a pool budget summary.'
-					/>
 				</div>
 			</section>
 
